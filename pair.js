@@ -75,7 +75,6 @@ router.get('/', async (req, res) => {
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "CHAMA-MD=" + string_session;
 
-                        // Forwarded session string
                         let code = await sock.sendMessage(sock.user.id, {
                             text: md,
                             contextInfo: {
@@ -86,9 +85,10 @@ router.get('/', async (req, res) => {
                             }
                         });
 
+                        await delay(1000);
+
                         let desc = `> ශෙයා කරන්න එපා \n\n> ᴅᴏ ɴᴏᴛ ꜱʜᴇʀᴇ ᴛʜɪꜱ \n\n> இதை யாரிடமும் பகிர வேண்டாம்\n\n> ʀɪᴘᴏ :- github.com\n\n> whats app channel:-https://whatsapp.com/channel/0029Vb9WF4nJJhzeUCFS6M0u\n\n> ᴏᴡɴᴇʀ :-94783314361\n\n\n> ᴘᴏᴡᴇʀᴅ ʙʏ chamindu- ᴍᴅ`;
 
-                        // Forwarded description
                         await sock.sendMessage(sock.user.id, {
                             text: desc,
                             contextInfo: {
@@ -97,11 +97,13 @@ router.get('/', async (req, res) => {
                                 participant: '120363419192353625@newsletter',
                                 remoteJid: '120363419192353625@newsletter',
                                 externalAdReply: {
-                                    title: "ᴄʜᴀᴍᴀ-ᴍᴅ",
+                                    title: "CHAMA-MD",
+                                    body: "Powered by Chamindu-MD",
                                     thumbnailUrl: "https://i.ibb.co/pjqsbyyW/7755.jpg",
                                     sourceUrl: "https://whatsapp.com/channel/0029Vb9WF4nJJhzeUCFS6M0u",
                                     mediaType: 1,
-                                    renderLargerThumbnail: true
+                                    renderLargerThumbnail: true,
+                                    showAdAttribution: true
                                 }
                             }
                         }, { quoted: code });
@@ -127,7 +129,8 @@ router.get('/', async (req, res) => {
                                 participant: '120363419192353625@newsletter',
                                 remoteJid: '120363419192353625@newsletter',
                                 externalAdReply: {
-                                    title: "ᴄʜᴀᴍᴀ-ᴍᴅ",
+                                    title: "CHAMA-MD",
+                                    body: "Powered by Chamindu-MD",
                                     thumbnailUrl: "https://i.ibb.co/pjqsbyyW/7755.jpg",
                                     sourceUrl: "https://whatsapp.com/channel/0029Vb9WF4nJJhzeUCFS6M0u",
                                     mediaType: 1,
