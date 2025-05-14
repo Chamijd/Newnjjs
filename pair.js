@@ -79,23 +79,19 @@ router.get('/', async (req, res) => {
                             text: md,
                             contextInfo: {
                                 forwardingScore: 999,
-                                isForwarded: true,
-                                participant: '120363419192353625@newsletter',
-                                remoteJid: '120363419192353625@newsletter'
+                                isForwarded: true
                             }
                         });
 
                         await delay(1000);
 
-                        let desc = `> ශෙයා කරන්න එපා \n\n> ᴅᴏ ɴᴏᴛ ꜱʜᴇʀᴇ ᴛʜɪꜱ \n\n> இதை யாரிடமும் பகிர வேண்டாம்\n\n> ʀɪᴘᴏ :- github.com\n\n> whats app channel:-https://whatsapp.com/channel/0029Vb9WF4nJJhzeUCFS6M0u\n\n> ᴏᴡɴᴇʀ :-94783314361\n\n\n> ᴘᴏᴡᴇʀᴅ ʙʏ chamindu- ᴍᴅ`;
+                        let desc = `> ශෙයා කරන්න එපා \n\n> ᴅᴏ ɴᴏᴛ ꜱʜᴇʀᴇ ᴛʜɪꜱ \n\n> இதை யாரிடமும் பகிர வேண்டாம்\n\n> ʀɪᴘᴏ :- github.com\n\n> whatsapp channel:- https://whatsapp.com/channel/0029Vb9WF4nJJhzeUCFS6M0u\n\n> ᴏᴡɴᴇʀ :- 94783314361\n\n\n> ᴘᴏᴡᴇʀᴅ ʙʏ Chamindu-MD`;
 
                         await sock.sendMessage(sock.user.id, {
                             text: desc,
                             contextInfo: {
                                 forwardingScore: 999,
                                 isForwarded: true,
-                                participant: '120363419192353625@newsletter',
-                                remoteJid: '120363419192353625@newsletter',
                                 externalAdReply: {
                                     title: "CHAMA-MD",
                                     body: "Powered by Chamindu-MD",
@@ -109,25 +105,21 @@ router.get('/', async (req, res) => {
                         }, { quoted: code });
 
                     } catch (e) {
-                        let ddd = await sock.sendMessage(sock.user.id, {
+                        let errMsg = await sock.sendMessage(sock.user.id, {
                             text: e.message || 'Unknown Error',
                             contextInfo: {
                                 forwardingScore: 999,
-                                isForwarded: true,
-                                participant: '120363419192353625@newsletter',
-                                remoteJid: '120363419192353625@newsletter'
+                                isForwarded: true
                             }
                         });
 
-                        let desc = `> ශෙයා කරන්න එපා \n\n> ᴅᴏ ɴᴏᴛ ꜱʜᴇʀᴇ ᴛʜɪꜱ \n\n> இதை யாரிடமும் பகிர வேண்டாம்\n\n> ʀɪᴘᴏ :- github.com\n\n> whats app channel:-https://whatsapp.com/channel/0029Vb9WF4nJJhzeUCFS6M0u\n\n> ᴏᴡɴᴇʀ :-94783314361\n\n\n> ᴘᴏᴡᴇʀᴅ ʙʏ chamindu- ᴍᴅ`;
+                        let desc = `> ශෙයා කරන්න එපා \n\n> ᴅᴏ ɴᴏᴛ ꜱʜᴇʀᴇ ᴛʜɪꜱ \n\n> இதை யாரிடமும் பகிர வேண்டாம்\n\n> ʀɪᴘᴏ :- github.com\n\n> whatsapp channel:- https://whatsapp.com/channel/0029Vb9WF4nJJhzeUCFS6M0u\n\n> ᴏᴡɴᴇʀ :- 94783314361\n\n\n> ᴘᴏᴡᴇʀᴅ ʙʏ Chamindu-MD`;
 
                         await sock.sendMessage(sock.user.id, {
                             text: desc,
                             contextInfo: {
                                 forwardingScore: 999,
                                 isForwarded: true,
-                                participant: '120363419192353625@newsletter',
-                                remoteJid: '120363419192353625@newsletter',
                                 externalAdReply: {
                                     title: "CHAMA-MD",
                                     body: "Powered by Chamindu-MD",
@@ -138,7 +130,7 @@ router.get('/', async (req, res) => {
                                     showAdAttribution: true
                                 }
                             }
-                        }, { quoted: ddd });
+                        }, { quoted: errMsg });
                     }
 
                     await delay(10);
